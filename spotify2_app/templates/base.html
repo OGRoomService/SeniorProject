@@ -1,0 +1,61 @@
+{% load static %}
+
+<!doctype html>
+<html lang="en" data-theme="dark">
+
+<head>
+	{% block head %}
+	{% endblock %}
+	<!-- Required meta tags -->
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+
+	<link rel="stylesheet" href="{% block style %}{% endblock %}">
+
+	<title>
+		{% block title %}
+		{% endblock %}
+		| Spotify2
+	</title>
+
+	<!-- Tailwind CSS -->
+	<link href="https://cdn.jsdelivr.net/npm/daisyui@2.13.6/dist/full.css" rel="stylesheet" type="text/css" />
+	<script src="https://cdn.tailwindcss.com"></script>
+
+	<script type="text/javascript" src="http://cdnjs.cloudflare.com/ajax/libs/trianglify/0.1.2/trianglify.min.js">
+	</script>
+
+	<!-- jQuery -->
+	<script src="https://code.jquery.com/jquery-3.3.1.slim.min.js"
+		integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous">
+	</script>
+
+	<!-- jQuery Cookie -->
+	<script src="https://cdn.jsdelivr.net/npm/js-cookie@3.0.1/dist/js.cookie.min.js"
+		integrity="sha256-0H3Nuz3aug3afVbUlsu12Puxva3CP4EhJtPExqs54Vg=" crossorigin="anonymous"></script>
+
+	<!-- Ajax Popper -->
+	<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"
+		integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous">
+	</script>
+</head>
+
+<body class="flex flex-col h-screen">
+		{% include "base/navbar.html" %}
+		{% block contentexclude %}
+		{% endblock %}
+		<div class="container w-11/12 md:w-10/12 2xl:w-8/12 mb-5 pt-5 mx-auto">
+			{% block content %}
+			{% endblock %}
+		</div>
+		{% include "base/footer.html" %}
+		
+
+	{% block scripts %}
+	{% endblock %}
+	<!-- Install Ajax and run custom javascript -->
+	<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+	<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js"></script>
+</body>
+
+</html>
